@@ -15,12 +15,16 @@ contract Todolist {
 
     // access the contract for the first time we have a data inside. This is the reason of constructor function.
     constructor() public {
+        // ask the constructor to add a default task like this
         createTask("Check out aave.com");
     }
+
+    event TaskCreated(uint256 id, string content, bool completed);
 
     // create a function to write the "Task" strct into the mapping
     function createTask(string memory _content) public {
         taskCount++;
         tasks[taskCount] = Task(taskCount, _content, false);
+        emit TaskCreated(taskCount, _content, false);
     }
 }
