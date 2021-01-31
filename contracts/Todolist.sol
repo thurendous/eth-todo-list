@@ -15,7 +15,7 @@ contract Todolist {
 
     // access the contract for the first time we have a data inside. This is the reason of constructor function.
     constructor() public {
-        createTask("Check out dapp.com");
+        createTask("Check out aave.com");
     }
 
     // create a function to write the "Task" strct into the mapping
